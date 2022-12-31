@@ -62,6 +62,19 @@
 
 }
 
+.home-detail{
+
+    width: 100vw;
+    height: 100vh;
+
+    .home-detail-title{
+
+        margin-top: 10vh;
+
+    }
+
+}
+
 @keyframes apparition-titre {
     from{
         opacity: 0;

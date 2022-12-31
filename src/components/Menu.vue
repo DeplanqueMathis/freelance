@@ -5,19 +5,29 @@
       <div class="menu-container-separator"></div>
       <div class="menu-nav">
         <div>
-          <a href="/" :class="{ active: true }">Accueil</a>
+          <a href="/" :class="{ active: this.$route.name == 'Home' }">
+            Accueil
+          </a>
         </div>
         <div>
-          <a href="/" :class="{ active: false }">Accueil</a>
+          <a href="/" :class="{ active: this.$route.name != 'Home' }">
+            Accueil
+          </a>
         </div>
         <div>
-          <a href="/" :class="{ active: false }">Accueil</a>
+          <a href="/" :class="{ active: this.$route.name != 'Home' }">
+            Accueil
+          </a>
         </div>
         <div>
-          <a href="/" :class="{ active: false }">Accueil</a>
+          <a href="/" :class="{ active: this.$route.name != 'Home' }">
+            Accueil
+          </a>
         </div>
         <div>
-          <a href="/" :class="{ active: false }">Accueil</a>
+          <a href="/" :class="{ active: this.$route.name != 'Home' }">
+            Accueil
+          </a>
         </div>
       </div>
       <div class="menu-close-cross" @click="$root.afficher_menu = false"></div>
@@ -28,6 +38,9 @@
 <script>
 export default {
   name: "Menu",
+  mounted() {
+    console.log(this.$route.name);
+  },
 };
 </script>
 
