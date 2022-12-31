@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "Gavency";
+    src: url("../../public/Font/Gavency.otf") format("opentype");
+}
+
+$color: #23232d;
+
+*{
+
+    font-family: 'Gavency';
+    color: #23232d;
+
+}
+
+body, html{
+
+    padding: 0;
+    margin: 0;
+
+}
+
+.header{
+
+    z-index: 1;
+    position: fixed;
+    width: 100vw;
+    height: 10vh;
+    border-bottom: 5px solid black;
+
+}
+
+.header-logo{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 35px;
+
+}
+
+.header-menu{
+
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    font-size: 30px;
+
+}
+
+@import "menu";
+@import "home";

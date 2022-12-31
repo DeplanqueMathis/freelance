@@ -1,12 +1,29 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="header">
+    <div class="header-logo">M.A.D</div>
+    <span class="header-menu" @click="afficher_menu = true"> Menu </span>
   </div>
+  <Menu> </Menu>
   <router-view />
 </template>
 
-<style lang="scss">
+<script>
+import Menu from "@/components/Menu.vue";
+
+export default {
+  name: "App",
+  components: {
+    Menu,
+  },
+  data: function () {
+    return {
+      afficher_menu: false,
+    };
+  },
+};
+</script>
+
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,14 +34,14 @@
 
 #nav {
   padding: 30px;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
