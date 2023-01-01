@@ -7,6 +7,12 @@ $color: #23232d;
 $background-color: #fefff0;
 $yellow: #efef51;
 
+$breakpoints: (
+    mobile: 599px,
+    verticale: 1080px,
+    tablette: 720px,
+);
+
 *{
 
     font-family: 'Gavency';
@@ -16,6 +22,7 @@ $yellow: #efef51;
 
 body, html{
 
+    overflow-x: hidden;
     padding: 0;
     margin: 0;
     background: $background-color;
@@ -58,8 +65,38 @@ body, html{
 .project-name{
 
     text-decoration: $yellow underline;
+    text-decoration-thickness: 4px;
+
+}
+
+a.link {
+    color: inherit;
+    text-decoration: none;
+    background:
+            linear-gradient(
+                            to right,
+                            $color,
+                            $color
+            ),
+            linear-gradient(
+                            to right,
+                            $yellow,
+                            $yellow
+            );
+    background-size: 100% 4px, 0 4px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+    padding-bottom: 3px;
+
+    &:hover{
+
+        background-size: 0 4px, 100% 4px;
+
+    }
 
 }
 
 @import "menu";
 @import "home";
+@import "articles";

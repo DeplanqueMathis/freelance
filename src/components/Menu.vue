@@ -10,23 +10,13 @@
           </a>
         </div>
         <div>
-          <a href="/" :class="{ active: this.$route.name != 'Home' }">
-            Accueil
+          <a href="/articles" :class="{ active: this.$route.name == 'Articles' }">
+            Articles
           </a>
         </div>
         <div>
-          <a href="/" :class="{ active: this.$route.name != 'Home' }">
-            Accueil
-          </a>
-        </div>
-        <div>
-          <a href="/" :class="{ active: this.$route.name != 'Home' }">
-            Accueil
-          </a>
-        </div>
-        <div>
-          <a href="/" :class="{ active: this.$route.name != 'Home' }">
-            Accueil
+          <a href="/contact" :class="{ active: this.$route.name == 'Contact' }">
+            Contact
           </a>
         </div>
       </div>
