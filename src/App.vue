@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="header-logo">M.A.D</div>
+    <router-link to="/" class="header-logo">M.A.D</router-link>
     <span class="header-menu" @click="afficher_menu = true"> Menu </span>
   </div>
   <Menu> </Menu>
@@ -18,14 +18,19 @@ export default {
   data: function () {
     return {
       afficher_menu: false,
-      url_api : process.env.VUE_APP_URL_API,
+      url_api: process.env.VUE_APP_URL_API,
     };
   },
-  watch:{
-    $route (){
+  watch: {
+    $route() {
       this.afficher_menu = false;
-    }
-  }
+    },
+  },
+  computed: {
+    est_connecte: function () {
+      return this.$cookies.isKey("token");
+    },
+  },
 };
 </script>
 

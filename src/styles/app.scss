@@ -49,6 +49,7 @@ body, html{
     transform: translate(-50%, -50%);
     font-weight: bold;
     font-size: clamp(25px, 3vw, 50px);
+    text-decoration: none;
 
 }
 
@@ -102,3 +103,4 @@ a.link {
 @import "home";
 @import "articles";
 @import "contact";
+@import "ajout_article";

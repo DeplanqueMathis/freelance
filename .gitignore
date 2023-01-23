@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
 /dist
-
+src/views/Login.vue
+src/views/Ajout_article.vue
 
 # local env files
 .env
