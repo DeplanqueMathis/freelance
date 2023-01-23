@@ -5,6 +5,7 @@
 
 $color: #23232d;
 $background-color: #fefff0;
+$background-input-color: #fafad3;
 $yellow: #efef51;
 
 $breakpoints: (
@@ -34,7 +35,7 @@ body, html{
     z-index: 1;
     position: fixed;
     width: 100vw;
-    height: 10vh;
+    height: clamp(50px, 10vh, 100px);
     border-bottom: 5px solid black;
     background: $background-color;
 
@@ -47,7 +48,7 @@ body, html{
     left: 50%;
     transform: translate(-50%, -50%);
     font-weight: bold;
-    font-size: 35px;
+    font-size: clamp(25px, 3vw, 50px);
 
 }
 
@@ -58,7 +59,7 @@ body, html{
     top: 50%;
     right: 5%;
     transform: translateY(-50%);
-    font-size: 30px;
+    font-size: clamp(20px, 2.8vw, 35px);
 
 }
 
@@ -100,3 +101,4 @@ a.link {
 @import "menu";
 @import "home";
 @import "articles";
+@import "contact";

@@ -2,6 +2,12 @@
 
   padding-top: 13vh;
 
+  .articles-details-title{
+
+    font-size: clamp(25px, 2vw, 35px);
+
+  }
+
   .articles-details-paragraph{
 
     position: absolute;
@@ -9,6 +15,15 @@
     transform: translateX(-50%);
     text-align: justify;
     white-space: nowrap;
+    font-size: clamp(15px, 1.5vw, 30px);
+
+    @media screen and (width < 900px) {
+
+      width: 80%;
+      text-align: start;
+      white-space: normal;
+
+    }
 
   }
 

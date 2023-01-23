@@ -18,8 +18,14 @@ export default {
   data: function () {
     return {
       afficher_menu: false,
+      url_api : process.env.VUE_APP_URL_API,
     };
   },
+  watch:{
+    $route (){
+      this.afficher_menu = false;
+    }
+  }
 };
 </script>
 

@@ -5,19 +5,13 @@
       <div class="menu-container-separator"></div>
       <div class="menu-nav">
         <div>
-          <a href="/" :class="{ active: this.$route.name == 'Home' }">
-            Accueil
-          </a>
+          <router-link to="/">Accueil</router-link>
         </div>
         <div>
-          <a href="/articles" :class="{ active: this.$route.name == 'Articles' }">
-            Articles
-          </a>
+          <router-link to="/articles">Articles</router-link>
         </div>
         <div>
-          <a href="/contact" :class="{ active: this.$route.name == 'Contact' }">
-            Contact
-          </a>
+          <router-link to="/contact">Contact</router-link>
         </div>
       </div>
       <div class="menu-close-cross" @click="$root.afficher_menu = false"></div>

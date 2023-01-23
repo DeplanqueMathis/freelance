@@ -120,7 +120,7 @@
 
         div{
 
-            a.active{
+            a.router-link-active{
 
                 text-decoration: $color line-through;
                 cursor: default;
@@ -134,7 +134,7 @@
 
             }
 
-            a:not(.active){
+            a:not(.router-link-active){
 
                 &:before, &:after{
 
@@ -218,8 +218,8 @@
         position: absolute;
         top: 1.5vh;
         right: 3vw;
-        width: 1vw;
-        height: 1vw;
+        width: 2.5vw;
+        height: 2.5vw;
         opacity: 0.3;
 
         &:hover {

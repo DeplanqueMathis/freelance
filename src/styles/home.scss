@@ -12,7 +12,7 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 12vw;
+    font-size: clamp(90px, 12vw, 500px);
     animation: apparition-titre ease-in-out 0.5s;
     animation-fill-mode: forwards;
 
@@ -25,10 +25,16 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.5vw;
+    font-size: clamp(10px, 1.5vw, 100px);
     animation: apparition-sous-titre 0.5s ease-in-out;
     animation-fill-mode: forwards;
     animation-delay: 0.25s;
+
+    @media screen and (width < 900px) {
+
+        margin: 12px 0px;
+
+    }
 
 }
 
@@ -43,7 +49,7 @@
     animation: apparition-home-square 0.7s ease-in-out;
     animation-fill-mode: forwards;
     animation-delay: 0.5s;
-    width: 45vw;
+    width: clamp(300px, 45vw, 2000px);
     aspect-ratio: 5/1;
 
 }
@@ -57,7 +63,7 @@
     left: -5%;
     background-image: radial-gradient(circle at 2.5px 2.7px, black 2.5px, transparent 0);
     background-size: 45px 31px;
-    width: 45vw;
+    width: clamp(300px, 45vw, 2000px);
     aspect-ratio: 5/1;
 
 }
@@ -71,21 +77,23 @@
     .home-detail-title{
 
         padding-top: 13vh;
+        font-size: clamp(18px, 3vw, 50px);
+
 
     }
 
     .home-detail-paragraph{
 
-        font-size: 0.8vw;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: justify;
+        font-size: clamp(13px, 2.5vw, 40px);
 
-        @media screen and (orientation:portrait) {
+        @media screen and (width < 900px) {
 
-            font-size: 1.5vw;
+            width: 80%;
 
         }
 
