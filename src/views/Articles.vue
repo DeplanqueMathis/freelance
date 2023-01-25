@@ -1,24 +1,29 @@
 <template>
-  <div class="articles-details">
-    <h1 class="articles-details-title">Articles</h1>
-    <p class="articles-details-paragraph">
-      Vous retrouverez ici tous les articles de Mathis Deplanque.<br />
-      Des articles qui traitent de nouveautés tech, de découvertes ou de retours
-      d'expériences.
-    </p>
-  </div>
-
-  <div class="articles-list">
-    <div v-for="(article_id, article) in articles" :key="article_id" class="article">
-      <div class="article-img">
-        <img :src="article.image" />
-      </div>
-      <div class="article-info">
-        <div class="article-title" v-html="article.title">
+  <div class="articles-container">
+    <div class="articles-details">
+      <h1 class="articles-details-title">Articles</h1>
+      <p class="articles-details-paragraph">
+        Vous retrouverez ici tous les articles de Mathis Deplanque.<br />
+        Des articles qui traitent de nouveautés tech, de découvertes ou de retours
+        d'expériences.
+      </p>
+    </div>
+  
+    <div class="articles-list">
+      <router-link
+        v-for="(article, article_id) in articles"
+        :key="article_id"
+        class="article-item"
+        :to="'/article/' + article.id"
+      >
+        <div class="article-item-img">
+          <img :src="this.$root.url_api + '/storage/' + article.image" />
         </div>
-        <div class="article-detail" v-html="article.detail">
+        <div class="article-item-info">
+          <div class="article-item-title" v-html="article.titre"></div>
+          <div class="article-item-detail" v-html="article.article.replaceAll(/<h1.+<\/h1>/g, '')"></div>
         </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -30,6 +35,19 @@ export default {
     return {
       articles: {},
     };
+  },
+  created() {
+    const requestOptions = {
+      method: "GET",
+    };
+    fetch(
+      this.$root.url_api + "/api/recupere_all_article",
+      requestOptions
+    )
+      .then((reponse) => reponse.json())
+      .then((data) => {
+        this.articles = data;
+      });
   },
 };
 </script>

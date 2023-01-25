@@ -1,0 +1,39 @@
+.article-container{
+
+  text-align: left;
+  width: 80vw;
+  overflow-x: hidden;
+  padding: clamp(50px, 10vh, 100px) 10vw;
+  font-size: clamp(10px, 2vh, 20px);
+  text-align: justify;
+
+  .article-illustration{
+
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+
+
+  }
+
+  h1{
+
+    font-size: clamp(20px, 5vh, 40px);
+
+  }
+
+
+  h3{
+
+    font-size: clamp(15px, 3.5vh, 25px);
+
+  }
+
+  p{
+
+    letter-spacing: 1px;
+    line-height: 1.1em;
+
+  }
+
+}
